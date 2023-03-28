@@ -1,0 +1,36 @@
+<html lang="en">
+  <link>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+    <link rel="stylesheet" href="style.css"></link>
+  </head>
+  <body>
+    <article class = "card-container">
+        <div id="question1" class="card">
+          <form id="card-contents" class="card-contents">
+            <p id="question"></p>
+            <input id="option1Radio" class="choice" type="radio" title="Grammar Checker"  name="answer">
+            <label for="option1Radio" id="option1" class="choiceLabel"></label><br>
+            <input id="option2Radio" class="choice" type="radio" title="Spell Checker"  name="answer">
+            <label for="option2Radio" id="option2" class="choiceLabel"></label><br>
+            <input id="option3Radio" class="choice" type="radio" title="Word Checker"  name="answer">
+            <label for="option3Radio" id="option3" class="choiceLabel"></label><br>
+            <input id="option4Radio" class="choice" type="radio" title="None of the these"  name="answer">
+            <label for="option4Radio" id="option4" class="choiceLabel"></label><br>
+            <input id="q1" type="button" value="submit"><br>
+            <label id="stat" class="margin-bottom">Good Luck</label>
+            <input id="next" type="button" value="Next" disabled="true">
+            <input id="finish" type="button" value="Finish" class="hidden">
+          </form>
+          <form id="summary" class="hidden">
+            <h1 id="summaryHeading">Summary</h1>
+            <p id="summaryStats"><span></span><br><span></span><br><span></span></p>
+            <p id="summaryMessage"><span></span><br><span id="comment"></span></p>
+          </form>
+        </div>
+    </article>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

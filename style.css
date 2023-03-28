@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.card {
+  background-color: rgba(138, 43, 226, 0.4);
+  height: 600px;
+  width: 600px;
+  border-radius: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 50px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.card:hover {
+  transform: rotate(90deg);
+  transition: transform 1s;
+}
+.card-contents {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  font-size: 2rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", "Arial", "sans-serif";
+  text-align: justify;
+  position: relative;
+}
+.card:hover .card-contents {
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+#question {
+  margin-bottom: 30px;
+}
+#q1 {
+  width: 10rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.choiceLabel:hover {
+  background-color: goldenrod;
+}
+.choice:hover {
+  width: 1rem;
+  height: 1rem;
+}
+.choice:hover {
+  width: 1rem;
+  height: 1rem;
+}
+#next,
+#finish {
+  width: 10rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.correct {
+  position: relative;
+  background-color: rgba(0, 255, 0, 0.6);
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  font-size: 2rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", "Arial", "sans-serif";
+  text-align: justify;
+}
+.card:hover .correct {
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+
+.incorrect {
+  position: relative;
+  background-color: rgba(255, 0, 0, 0.7);
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  font-size: 2rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", "Arial", "sans-serif";
+  text-align: justify;
+}
+
+.card:hover .incorrect {
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+
+#summary {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 40px;
+}
+#summary h1 {
+  margin-bottom: 20px;
+}
+.card:hover #summary {
+  rotate: -90deg;
+  transition: 1s;
+}
+
+#summaryMessage {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+#summaryMessage #comment {
+  font-weight: normal;
+  font-size: 2rem;
+}
+.hidden {
+  display: none;
+}
+.margin-bottom {
+  display: block;
+  margin-bottom: 30px;
+}

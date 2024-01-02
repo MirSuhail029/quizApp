@@ -140,6 +140,127 @@ const questions = {
     opt4: "Wular lake",
     answer: "Wular lake",
   },
+  question16: {
+    ques: "Which country shares boundary with Pakistan in the West?",
+    opt1: "Iran",
+    opt2: "India",
+    opt3: "Iraq",
+    opt4: "China",
+    answer: "Iran",
+  },
+  question17: {
+    ques: "Which of the following soils is suitable for saffron cultivation in Jammu and Kashmir region?",
+    opt1: "Gruti soil",
+    opt2: "Karewa soil",
+    opt3: "Nambal soil",
+    opt4: "Tand soil",
+    answer: "Karewa soil",
+  },
+  question18: {
+    ques: "The origin of which of the following lakes in Jammu and Kashmir is associated with the Mahabharata?",
+    opt1: "Dal lake",
+    opt2: "Surinsar lake",
+    opt3: "Nagin lake",
+    opt4: "Wullar lake",
+    answer: "Surinsar lake",
+  },
+  question19: {
+    ques: "Gulab Singh was eventually made the Raja of Jammu through which the following Treaties dated: 16-3-1846?",
+    opt1: "Treaty of Delhi",
+    opt2: "Treaty of Lahore",
+    opt3: "Treaty of Amritsar",
+    opt4: "Treaty of Srinagar",
+    answer: "Treaty of Amritsar",
+  },
+  question20: {
+    ques: "In 2021, the Jammu and Kashmir Government filed an application to seek GI tag for which of the following species of mushrooms?",
+    opt1: "Telia Sattar",
+    opt2: "Gucchi",
+    opt3: "Boda",
+    opt4: "Matij",
+    answer: "Gucchi",
+  },
+  question21: {
+    ques: "Which among the following destinations is the base camp of the Amarnath Yatra?",
+    opt1: "Sonmarg",
+    opt2: "Gulmarg",
+    opt3: "Pampore",
+    opt4: "Sanasar",
+    answer: "Sonmarg",
+  },
+  question22: {
+    ques: "Which among the following was the residential palace of Raja Amar Singh, located in Jammu?",
+    opt1: "Bahu Fort",
+    opt2: "Amar Mahal",
+    opt3: "Akhnoor Fort",
+    opt4: "Gol Ghar",
+    answer: "Amar Mahal",
+  },
+  question23: {
+    ques: "The Jawaharlal Nehru Port Trust (JNPT) is the premier container handling port in India, accounting for around 50% of the total containerized cargo volume, across the major ports of India. It is located in:",
+    opt1: "Navi Mumbai",
+    opt2: "Kochi",
+    opt3: "Visakhapatnam",
+    opt4: "Chennai",
+    answer: "Navi Mumbai",
+  },
+  question24: {
+    ques: "In October 2021, Government of India signed a share purchase agreement with Tata Sons for sale of which of the following airlines for Rs 18,000 crores?",
+    opt1: "IndiGo",
+    opt2: "SpiceJet",
+    opt3: "Go First",
+    opt4: "Air India",
+    answer: "Air India",
+  },
+  question25: {
+    ques: "When did the Indigo revolt in Bengal, a peasant movement, start?",
+    opt1: "1837",
+    opt2: "1859",
+    opt3: "1871",
+    opt4: "1889",
+    answer: "1859",
+  },
+  question26: {
+    ques: "Which of the following countries lies to the south of India?",
+    opt1: "Pakistan",
+    opt2: "Maldives",
+    opt3: "Myanmar",
+    opt4: "Bangladesh",
+    answer: "Maldives",
+  },
+  question27: {
+    ques: "Which of the following forts of Jammu and Kashmir is also known as the Koh-e-Maran?",
+    opt1: "Chitkan Fort",
+    opt2: "Akhnoor Fort",
+    opt3: "Hari Parbat Fort",
+    opt4: "Bahu Fort",
+    answer: "Hari Parbat Fort",
+  },
+  question28: {
+    ques: "As per Census 2011, what is the literacy rate of India?",
+    opt1: "67.02 %",
+    opt2: "70.10 %",
+    opt3: "74.04 %",
+    opt4: "81.03 %",
+    answer: "74.04 %",
+  },
+  question29: {
+    ques: "In 2021, under the Pradhan Mantri Kaushal Vikas Yojana, a pilot project was launched to revive which of the following crafts of Jammu and Kashmir?",
+    opt1: "Calico Painting",
+    opt2: "Basohli",
+    opt3: "Phool Kari",
+    opt4: "Namda",
+    answer: "Namda",
+  },
+  question30: {
+    ques: "Which of the following statements is FALSE with reference to the Jammu and Kashmir Reorganization Act of 2019?",
+    opt1: "Ladakh has been formulated into a separate Union territory without a Legislative Assembly",
+    opt2: "Jammu and Kashmir has become a Union Territory with a Legislative Assembly",
+    opt3: "Governor of existing State of Jammu and Kashmir to be common Lieutenant Governor",
+    opt4: "There will be no reservation for Scheduled Tribe and Scheduled Caste in Jammu and Kashmir",
+    answer:
+      "There will be no reservation for Scheduled Tribe and Scheduled Caste in Jammu and Kashmir",
+  },
 };
 // converting the questions object into a map
 const questionsMap = new Map(Object.entries(questions));
@@ -151,6 +272,9 @@ const questionsMap = new Map(Object.entries(questions));
 // storing all the keys in a set to keep track of key availability
 const qNumberSet = new Set();
 for (const [key] of questionsMap) {
+  if (qNumberSet.size === 10) {
+    break;
+  }
   qNumberSet.add(key);
 }
 // const qNumberSet = new Set(qNumberArray);

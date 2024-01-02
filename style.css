@@ -53,10 +53,10 @@
   width: 1rem;
   height: 1rem;
 }
-.choice:hover {
+/* .choice:hover {
   width: 1rem;
   height: 1rem;
-}
+} */
 #next,
 #finish {
   width: 10rem;

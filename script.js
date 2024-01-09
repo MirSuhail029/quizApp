@@ -264,51 +264,68 @@ const questions = {
 };
 // converting the questions object into a map
 const questionsMap = new Map(Object.entries(questions));
+
 // storing all the keys of individual questions in an array
-// const qNumberArray = [];
-// for (const [key] of questionsMap) {
-//   qNumberArray.push(key);
-// }
+const qNumberArray = [];
+for (const [key] of questionsMap) {
+  qNumberArray.push(key);
+}
+
 // storing all the keys in a set to keep track of key availability
 const qNumberSet = new Set();
-for (const [key] of questionsMap) {
-  if (qNumberSet.size === 10) {
-    break;
-  }
-  qNumberSet.add(key);
+while (qNumberSet.size !== 10) {
+  const randomNumber = Math.floor(Math.random() * qNumberArray.length);
+  // console.log(randomNumber);
+  qNumberSet.add(qNumberArray[randomNumber]);
 }
-// const qNumberSet = new Set(qNumberArray);
+// console.log(qNumberSet);
 
-// selecting a random question from the set and removing it after selection
-let random;
+const finalQuestionKeysArray = [];
+for (const item of qNumberSet) {
+  finalQuestionKeysArray.push(item);
+}
+// console.log(finalQuestionKeysArray);
+
 const setSize = qNumberSet.size;
-const generateQuestionPointer = function () {
-  let selector;
-  if (qNumberSet.size !== 0) {
-    while (true) {
-      random = Math.ceil(Math.random() * setSize);
-      selector = `question${random}`;
-      if (qNumberSet.has(selector)) {
-        qNumberSet.delete(selector);
-        break;
-      }
-    }
-  }
-  return selector;
-};
+
 // using the randomly selected question reference to acquiring the data for that question from the question map
 // updating the dom nodes to display the question data acquired from the question map
 let flag = false;
+let questionCounter = 0;
 let qP;
 let answer;
 const generateQuestion = function () {
   nextButton.setAttribute("disabled", "true");
   cardButton.removeAttribute("disabled");
   flag = false;
-  qP = questionsMap.get(generateQuestionPointer());
+  qP = questionsMap.get(`${finalQuestionKeysArray[questionCounter]}`);
+  const questionLength = qP.ques.length;
+  const optionsLength = Math.max(
+    qP.opt1.length,
+    qP.opt2.length,
+    qP.opt3.length,
+    qP.opt4.length
+  );
+
   if (qP !== undefined) {
     answer = qP.answer;
     question.textContent = qP.ques;
+    if (
+      (questionLength > 150 && questionLength <= 250) ||
+      (optionsLength > 20 && optionsLength <= 30)
+    ) {
+      card.setAttribute("style", "font-size:1.8rem");
+    } else if (
+      (questionLength > 250 && questionLength <= 350) ||
+      (optionsLength > 30 && optionsLength <= 40)
+    ) {
+      card.setAttribute("style", "font-size:1.5rem");
+    } else if (questionLength > 350 || optionsLength > 40) {
+      card.setAttribute("style", "font-size:1rem");
+    } else {
+      card.setAttribute("style", "font-size:2rem");
+    }
+
     option1.textContent = qP.opt1;
     option2.textContent = qP.opt2;
     option3.textContent = qP.opt3;
@@ -328,6 +345,7 @@ const generateQuestion = function () {
     card.setAttribute("class", "card-contents");
     stat.textContent = "Good Luck";
   }
+  questionCounter++;
 };
 generateQuestion();
 nextButton.addEventListener("click", generateQuestion);

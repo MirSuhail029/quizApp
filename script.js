@@ -306,23 +306,31 @@ const generateQuestion = function () {
     qP.opt3.length,
     qP.opt4.length
   );
-
+  // console.log(questionLength, optionsLength);
   if (qP !== undefined) {
     answer = qP.answer;
     question.textContent = qP.ques;
+    let flag = false;
+
     if (
-      (questionLength > 150 && questionLength <= 250) ||
-      (optionsLength > 20 && optionsLength <= 30)
+      (questionLength > 100 && questionLength <= 150) ||
+      (optionsLength > 15 && optionsLength <= 30)
     ) {
       card.setAttribute("style", "font-size:1.8rem");
-    } else if (
-      (questionLength > 250 && questionLength <= 350) ||
-      (optionsLength > 30 && optionsLength <= 40)
+      flag = true;
+    }
+    if (
+      (questionLength > 150 && questionLength <= 250) ||
+      (optionsLength > 30 && optionsLength <= 50)
     ) {
       card.setAttribute("style", "font-size:1.5rem");
-    } else if (questionLength > 350 || optionsLength > 40) {
+      flag = true;
+    }
+    if (questionLength > 250 || optionsLength > 50) {
       card.setAttribute("style", "font-size:1rem");
-    } else {
+      flag = true;
+    }
+    if (flag === false) {
       card.setAttribute("style", "font-size:2rem");
     }
 

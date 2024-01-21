@@ -18,14 +18,6 @@ for (let i = 1; i <= 4; i++) {
   optionRadio = document.getElementById("optionRadio");
 }
 
-fetch("./questionapi.json")
-  .then((response) => {
-    return response.json();
-  })
-  .then((response) => {
-    console.log(response);
-  });
-
 // object containing all questions data
 const questions = {
   question1: {
